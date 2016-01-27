@@ -1,3 +1,5 @@
+#Angular phones catalog with Typescript
+
 This is the angular 1.x phones catalog demo. with some small changes
 
 1. It is done with Typescript and not ES5
