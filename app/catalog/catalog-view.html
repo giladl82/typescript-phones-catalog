@@ -1,0 +1,41 @@
+﻿<div class="row catalog-sort-menu">
+    <div class="col-lg-2 text-left">
+        <a ng-if="vm.showBack" ng-href="#/catalog" class="btn btn-link">&lt;&lt; Back</a>
+    </div>
+    <div class="col-lg-10 text-right">
+        <button class="btn btn-link" ng-click="vm.order('name', 0)">A-Z</button> |
+        <button class="btn btn-link" ng-click="vm.order('name', 1)">Z-A</button> |
+        <button class="btn btn-link" ng-click="vm.order('age', 0)">Newest first</button> |
+        <button class="btn btn-link" ng-click="vm.order('age', 1)">Oldest first</button>
+    </div>
+</div>
+<div class="row" ng-if="vm.phones.length > 0">
+    <div class="col-lg-12">
+        <h2>
+            Showing {{vm.catalogTitle}}
+            <button class="pull-right btn" ng-class="{'disabled': vm.selectedPhones.length < 2}"
+                    ng-click="vm.comparePhonse()">COMPARE</button>
+        </h2>
+    </div>
+    <div class="col-lg-12 flex" ng-class="{'flex-start': vm.phones.length < 4}">
+        <div ng-repeat="phone in vm.phones">
+            <catalog-item phone-data="phone" on-select="vm.onItemSelect(phone)"></catalog-item>
+        </div>
+    </div>
+</div>
+
+
+<div class="row" ng-if="vm.phones.length === 0">
+    <h2 class="text-center">There is no data to display for "{{vm.catalogTitle}}"</h2>  
+</div>
+
+<div ng-show="vm.showCompareError" class="modal-blocker"></div>
+<div ng-show="vm.showCompareError" class="panel panel-default modal-panel">
+    <div class="panel-heading">
+        ALERT
+    </div>
+    <div class="panel-body catalog-item-body">
+        <h1 class="text-center">You can only compare up to {{vm.maxItemsToCompare}} Devices</h1>
+        <button class="btn btn-block btn-success" ng-click="vm.hideCompareError()">OK</button>
+    </div>
+</div>

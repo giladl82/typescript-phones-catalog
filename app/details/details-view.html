@@ -1,0 +1,121 @@
+﻿<br />
+<!-- back button -->
+<div class="row">
+    <a ng-href="#/catalog" class="btn btn-link">&lt;&lt; Back</a>
+</div>
+<!--header -->
+<div class="row">
+    <div class="col-lg-12 phone-title">
+        <h2 ng-bind="vm.phone.name"></h2>
+    </div>
+</div>
+<!-- description -->
+<div class="row">
+    <div class="col-lg-12">
+        <p ng-bind="vm.phone.description"></p>
+    </div>
+</div>
+<!--data -->
+<div class="row">
+    <!--images -->
+    <div class="col-lg-4">
+        <div class="thumbnail">
+            <img class="catalog-item-image" ng-src="http://angular.github.io/angular-phonecat/step-12/app/{{vm.phone.images[vm.imageIndex]}}" alt="" />
+        </div>
+        <div class="row">
+            <div class="col-lg-4 top-buffer" ng-repeat="image in vm.phone.images">
+                <div class="thumbnail" ng-class="{'thumbnail-primary': $index === vm.imageIndex}">
+                    <img class="catalog-item-image" ng-click="vm.updateActiveImage($index)"
+                         ng-src="http://angular.github.io/angular-phonecat/step-12/app/{{image}}" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--properties -->
+    <div class="col-lg-8">
+        <div class="row phone-propeties-upper-row row1">
+            <!-- Availability -->
+            <div class="col-lg-3">
+                <h4>Availability and Networks</h4>
+                <p ng-repeat="av in vm.phone.availability" ng-bind="av"></p>
+            </div>
+            <!-- Battery -->
+            <div class="col-lg-3 alt-bg">
+                <h4>Battery</h4>
+                <h5>Type</h5>
+                <p ng-bind="vm.phone.battery.type"></p>
+                <h5>Talk Time</h5>
+                <p ng-bind="vm.phone.battery.talkTime"></p>
+                <h5>Standby Time</h5>
+                <p ng-bind="vm.phone.battery.standbyTime"></p>
+            </div>
+            <!-- Storage -->
+            <div class="col-lg-3">
+                <h4>Storage and Memory RAM</h4>
+                <h5>RAM</h5>
+                <p ng-bind="vm.phone.storage.ram"></p>
+                <h5>Flash</h5>
+                <p ng-bind="vm.phone.storage.flash"></p>
+            </div>
+            <!-- Android -->
+            <div class="col-lg-3 alt-bg">
+                <h4>Android</h4>
+                <h5>OS</h5>
+                <p ng-bind="vm.phone.android.os"></p>
+                <h5>UI</h5>
+                <p ng-bind="vm.phone.android.ui"></p>
+            </div>
+        </div>
+        <div class="row phone-propeties-upper-row row2">
+            <!-- Size -->
+            <div class="col-lg-3 alt-bg">
+                <h4>Size and Weight</h4>
+                <h5>Dimensions</h5>
+                <p ng-bind="vm.phone.sizeAndWeight.dimensions"></p>
+                <h5>Weight</h5>
+                <p ng-bind="vm.phone.sizeAndWeight.weight"></p>
+            </div>
+            <!-- Display -->
+            <div class="col-lg-3">
+                <h4>Display</h4>
+                <h5>Screen size</h5>
+                <p ng-bind="vm.phone.display.screenSize"></p>
+                <h5>Screen resolution</h5>
+                <p ng-bind="vm.phone.display.screenResolution"></p>
+                <h5>Touch screen</h5>
+                <p ng-bind="vm.phone.display.touchScreen"></p>
+            </div>
+            <!-- Hardware -->
+            <div class="col-lg-3 alt-bg">
+                <h4>Hardware</h4>
+                <h5>CPU</h5>
+                <p ng-bind="vm.phone.hardware.cpu"></p>
+                <h5>USB</h5>
+                <p ng-bind="vm.phone.hardware.usb"></p>
+                <h5>Audio / headphone jack</h5>
+                <p ng-bind="vm.phone.hardware.audioJack"></p>
+                <h5>FM Radio</h5>
+                <p ng-bind="vm.phone.hardware.fmRadio"></p>
+                <h5>Accelerometer</h5>
+                <p ng-bind="vm.phone.hardware.accelerometer"></p>
+                <h5>Physical Keyboard</h5>
+                <p ng-bind="vm.phone.hardware.physicalKeyboard"></p>
+            </div>
+            <!-- Camera -->
+            <div class="col-lg-3">
+                <h4>Camera</h4>
+                <h5>Primary</h5>
+                <p ng-bind="vm.phone.camera.primary"></p>
+                <h5>Features</h5>
+                <p ng-bind="vm.phone.camera.features"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>Additional Features</h4>
+                <p ng-bind="vm.phone.additionalFeatures"></p>
+            </div>
+        </div>
+    </div>
+</div>
+

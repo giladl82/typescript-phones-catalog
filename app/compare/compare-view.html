@@ -1,0 +1,154 @@
+﻿<br />
+<!-- back button -->
+<div class="row">
+    <a ng-href="#/catalog" class="btn btn-link">&lt;&lt; Back</a>
+</div>
+<!--header -->
+<div class="row">
+    <div class="col-lg-12 phone-title">
+        <h2>Comparing phones:</h2>
+    </div>
+</div>
+
+<tr class="row">
+<tr class="col-lg-12">
+<tr class="table-responsive">
+    <table class="table table-bordered">
+        <tr>
+            <td>&nbsp;</td>
+            <td ng-repeat="phone in vm.phones">
+                <h4 ng-bind="phone.name"></h4>
+            </td>
+        </tr>
+        <tr class="active">
+            <td>&nbsp;</td>
+            <td ng-repeat="phone in vm.phones" class="text-center">
+                <img class="compare-item-image" ng-src="http://angular.github.io/angular-phonecat/step-12/app/{{phone.images[0]}}" alt="" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Availability and Networks</h4>
+            </td>
+            <td ng-repeat="phone in vm.phones">
+                <p ng-repeat="av in phone.availability" ng-bind="av"></p>
+            </td>
+        </tr>
+        <!-- Battery -->
+        <tr class="active">
+            <td colspan="{{vm.phones.length + 1}}" class="text-center"><h4>Battery</h4></td>
+        </tr>
+        <tr>
+            <td>
+                <h5>Type</h5>
+            </td>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.battery.type"></td>
+        </tr>
+        <tr>
+            <td><h5>Talk Time</h5></td>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.battery.talkTime"></td>
+        </tr>
+        <tr>
+            <td><h5>Standby Time</h5></td>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.battery.standbyTime"></td>
+        </tr>
+        <!-- Storage -->
+        <tr class="active">
+            <td colspan="{{vm.phones.length + 1}}"><h4 class="text-center">Storage and Memory RAM</h4></td>
+        </tr>
+        <tr>
+            <td><h5>RAM</h5></td>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.storage.ram"></td>
+        </tr>
+        <tr>
+            <td><h5>Flash</h5></td>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.storage.flash"></td>
+        </tr>
+        <!-- Android -->
+        <tr class="active">
+            <td colspan="{{vm.phones.length + 1}}" class="text-center"><h4>Android</h4></td>
+        </tr>
+        <tr>
+            <td><h5>OS</h5></td>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.android.os"></td>
+        </tr>
+        <tr>
+            <td><h5>UI</h5></td>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.android.ui"></td>
+        </tr>
+        <!-- Size -->
+        <tr class="active">
+            <td colspan="{{vm.phones.length + 1}}" class="text-center"><h4>Size and Weight</h4></td>
+        </tr>
+        <tr>
+            <td><h5>Dimensions</h5></td>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.sizeAndWeight.dimensions"></td>
+        </tr>
+        <tr>
+            <td><h5>Weight</h5></td>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.sizeAndWeight.weight"></td>
+        </tr>
+        <!-- Display -->
+        <tr class="active">
+            <td colspan="{{vm.phones.length + 1}}" class="text-center"><h4>Display</h4></td>
+        </tr>
+        <tr>
+            <td>
+                <h5>Screen size</h5>
+            </td>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.display.screenSize"></td>
+        </tr>
+        <tr>
+            <td>
+                <h5>Screen resolution</h5>
+            </td>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.display.screenResolution"></td>
+        </tr>
+        <tr>
+            <td>
+                <h5>Touch screen</h5>
+            </td>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.display.touchScreen"></td>
+        </tr>
+        <!-- Hardware -->
+        <tr class="active"><td colspan="{{vm.phones.length + 1}}" class="text-center"><h4>Hardware</h4></td></tr>
+        <tr>
+            <td><h5>CPU</h5></td>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.hardware.cpu"></td>
+        </tr>
+        <tr>
+            <td><h5>USB</h5></td>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.hardware.usb"></td>
+        </tr>
+        <tr>
+            <td><h5>Audio / headphone jack</h5>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.hardware.audioJack"></td>
+        </tr>
+        <tr>
+            <td><h5>FM Radio</h5></td>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.hardware.fmRadio"></td>
+        </tr>
+        <tr>
+            <td><h5>Accelerometer</h5></td>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.hardware.accelerometer"></td>
+        </tr>
+        <tr>
+            <td><h5>Physical Keyboard</h5></td>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.hardware.physicalKeyboard"></td>
+        </tr>
+        <!-- Camera -->
+        <tr class="active">
+            <td colspan="{{vm.phones.length + 1}}" class="text-center"><h4>Camera</h4></td>
+        </tr>
+        <tr>
+            <td><h5>Primary</h5></td>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.camera.primary"></td>
+        </tr>
+        <tr>
+            <td><h5>Features</h5></td>
+            <td ng-repeat="phone in vm.phones" ng-bind="phone.camera.features"></td>
+        </tr>
+    </table>
+    </div>
+    </div>
+    </div>

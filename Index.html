@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Phones Catalog</title>
+    <meta name="description" content="" />
+    <link href="/content/bootstrap.css" rel="stylesheet" />
+    <link href="/content/site.css" rel="stylesheet" />
+</head>
+<body ng-app="phonesCat" ng-controller="LayoutCtrl as vm">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" ng-href="#/catalog">
+                    <i class="glyphicon glyphicon-phone"></i> Phones Catalog
+                </a>
+            </div>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" 
+                           ng-keypress="vm.searchKeyPress($event)"
+                           placeholder="Search" ng-model="vm.searchBy">
+                    <span class="input-group-btn">
+                        <button type="button" ng-click="vm.search()"
+                                class="btn btn-default">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container body-content">
+        <ng-view></ng-view>
+        <hr />
+        <footer>
+            <p>&copy; Gilad Lev-Ari</p>
+        </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.9/angular-route.min.js"></script>
+    
+    <script src="/app/phonescat-module.js"></script>
+    <script src="/app/models/enums.js"></script>
+    <script src="/app/models/phone.js"></script>
+    <script src="/app/common/data-access-service.js"></script>
+    <script src="/app/_layout/layoutCtrl.js"></script>
+    <script src="/app/catalog/catalog-ctrl.js"></script>
+    <script src="/app/details/details-ctrl.js"></script>
+    <script src="/app/compare/compare-ctrl.js"></script>
+    <script src="/app/catalog/list-item-directive.js"></script>
+</body>
+</html>
