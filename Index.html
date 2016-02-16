@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8" />    
     <meta name="viewport" content="width=device-width" />
     <title>Phones Catalog</title>
     <meta name="description" content="" />
@@ -31,6 +31,9 @@
             </form>
         </div>
     </div>
+    over component<br />
+    <counter count="0"></counter> 
+    under component<br />
     <div class="container body-content">
         <ng-view></ng-view>
         <hr />
@@ -39,8 +42,8 @@
         </footer>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-    <script src="https://code.angularjs.org/1.4.9/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+    <script src="https://code.angularjs.org/1.5.0/angular-route.min.js"></script>
     
     <script src="/app/phonescat-module.js"></script>
     <script src="/app/models/enums.js"></script>
@@ -51,5 +54,6 @@
     <script src="/app/details/details-ctrl.js"></script>
     <script src="/app/compare/compare-ctrl.js"></script>
     <script src="/app/catalog/list-item-directive.js"></script>
+    <script src="/app/components/test-component.js"></script>
 </body>
 </html>
